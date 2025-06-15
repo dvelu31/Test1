@@ -3,16 +3,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-username/your-simple-app-repo.git'
-            }
-        }
-        stage('Checkout') {
-    steps {
-        git credentialsId: 'github-token',
+                git credentialsId: 'github-token',
             url: 'https://github.com/your-username/your-simple-app-repo.git',
             branch: 'main'
-    }
-}
+            }
+        }
         stage('Build') {
             steps {
                 echo "Building the application..."
