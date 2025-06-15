@@ -4,8 +4,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git credentialsId: 'github-token',
-            url: 'https://github.com/your-username/your-simple-app-repo.git',
-            branch: 'main'
+                    url: 'https://github.com/your-username/your-simple-app-repo.git',
+                    branch: 'main'
             }
         }
         stage('Build') {
@@ -14,7 +14,7 @@ pipeline {
                 // Example: run a build command (e.g., for a Node.js app)
                 // sh 'npm install'
                 // sh 'npm build'
-                sh 'echo "Build complete!"'
+                sh 'echo \"Build complete!\"'
             }
         }
         stage('Test') {
@@ -22,10 +22,8 @@ pipeline {
                 echo "Running tests..."
                 // Example: run tests
                 // sh 'npm test'
-                // Simulate a passing test
-                sh 'echo "Tests passed successfully!"'
-                // Simulate a failing test (uncomment to see failure)
-                // sh 'exit 1'
+                sh 'echo \"Tests passed successfully!\"'
+                // sh 'exit 1'  // Uncomment to simulate a failure
             }
         }
         stage('Archive Artifacts') {
